@@ -8,15 +8,17 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Set;
 import iterator.Covid19PacientIterator;
-
+//a
 public class Covid19Pacient {
 	private String  name; 
 	private int age;
 	private Map<Symptom,Integer> symptoms=new HashMap<Symptom,Integer>();
+	private SymptomSortzailea ss;
 
-	public Covid19Pacient(String name, int years) {
+	public Covid19Pacient(String name, int years, SymptomSortzailea ss) {
 		this.name = name;
 		this.age = years;
+		this.ss=ss;
 	}
 	
 	public String getName() {
@@ -59,7 +61,7 @@ public class Covid19Pacient {
 	public Symptom addSymptomByName(String symptom, Integer w){
 		Symptom s=getSymptomByName(symptom);
 		if (s==null) {
-			s=createSymptom(symptom); 
+			s=ss.createSymptom(symptom); 
 			symptoms.put(s,w);		
 		}
 		return s;
@@ -92,15 +94,19 @@ public class Covid19Pacient {
 		return impact;
 	}
 	
-	private Symptom createSymptom(String symptomName) {
+	/*private Symptom createSymptom(String symptomName) {
+		return ss.createSymptom(symptomName);
+	}
+	
+	/*private Symptom createSymptom(String symptomName) {
 	    List<String> impact5 = Arrays.asList("fiebre", "tos seca", "astenia","expectoracion");
 	    List<Double> index5 = Arrays.asList(87.9, 67.7, 38.1, 33.4);
 	    List<String> impact3 = Arrays.asList("disnea", "dolor de garganta", "cefalea","mialgia","escalofrios");
 	    List<Double> index3 = Arrays.asList(18.6, 13.9, 13.6, 14.8, 11.4);
-	    List<String> impact1 = Arrays.asList("nauseas", "vómitos", "congestión nasal","diarrea","hemoptisis","congestion conjuntival");
+	    List<String> impact1 = Arrays.asList("nauseas", "vomitos", "congestion nasal","diarrea","hemoptisis","congestion conjuntival");
 	    List<Double> index1 = Arrays.asList(5.0, 4.8, 3.7, 0.9, 0.8);
 	    
-	    List<String> digestiveSymptom=Arrays.asList("nauseas", "vómitos","diarrea");
+	    List<String> digestiveSymptom=Arrays.asList("nauseas", "vomitos","diarrea");
 	    List<String> neuroMuscularSymptom=Arrays.asList("fiebre", "astenia", "cefalea", "mialgia","escalofrios");
 	    List<String> respiratorySymptom=Arrays.asList("tos seca","expectoracion","disnea","dolor de garganta", "congestión nasal","hemoptisis","congestion conjuntival");
 
@@ -118,6 +124,6 @@ public class Covid19Pacient {
 	    }
 	    return null;		
 		
-	}
+	}*/
 }
 

@@ -1,6 +1,6 @@
 package domain;
-
-public class RespiratorySymptom extends Symptom{
+//a
+public class RespiratorySymptom extends Symptom{//inplements Symptom
 
 	public RespiratorySymptom(String name, int covidImpact, int severityIndex) {
 		super(name, covidImpact, severityIndex);

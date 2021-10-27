@@ -7,10 +7,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-
+//a
 public class Medicament {
 	private String name;
 	private List<Symptom> symptoms=new ArrayList<Symptom>();
+	private SymptomSortzailea ss;
 
 
 	public String getName() {
@@ -21,9 +22,10 @@ public class Medicament {
 		this.name = name;
 	}
 
-	public Medicament(String name) {
+	public Medicament(String name,SymptomSortzailea ss) {
 		super();
 		this.name = name;
+		this.ss=ss;
 	}
 
 	public Symptom addSymptomByName(String symptom){
@@ -31,7 +33,7 @@ public class Medicament {
 		Symptom s=getSymptomByName(symptom);
 		if (s==null) {
 
-			s2=createSymptom(symptom);
+			s2=ss.createSymptom(symptom);
 			symptoms.add(s2);
 		}
 		return s2;
@@ -58,7 +60,10 @@ public class Medicament {
 		if (s!=null)removeSymptom(s);
 		return s;
 	}
-	private Symptom createSymptom(String symptomName) {
+	
+	/*private Symptom createSymptom(String symptomName) {
+		return ss.createSymptom(symptomName);
+	/*private Symptom createSymptom(String symptomName) {
 	    List<String> impact5 = Arrays.asList("fiebre", "tos seca", "astenia","expectoracion");
 	    List<Double> index5 = Arrays.asList(87.9, 67.7, 38.1, 33.4);
 	    List<String> impact3 = Arrays.asList("disnea", "dolor de garganta", "cefalea","mialgia","escalofrios");
@@ -84,4 +89,5 @@ public class Medicament {
 	    }
 	    return null;		
 		
-	}}
+	}*/
+}
