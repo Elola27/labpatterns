@@ -13,12 +13,7 @@ public class Main {
 		/*Covid19Pacient p1=new Covid19Pacient("aitor", 35,new SymptomSortzailea());
 		new PacientSymptomGUI(p1);
 		Medicament m=new Medicament("Ibuprofeno", new SymptomSortzailea());
-		MedicalGUI mgui=new MedicalGUI(m);*/
-		//a
-		Observable pacient=new Covid19Pacient("aitor", 35,new SymptomSortzailea());
-		PacientObserverGUI pacientGUI= new PacientObserverGUI (pacient);
-		PacientSymptomGUI frame = new PacientSymptomGUI (pacient);
-
-	}
-
+		MedicalGUI mgui=new MedicalGUI(m);
+		//a*/
+		}
 }
