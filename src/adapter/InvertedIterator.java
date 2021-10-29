@@ -9,4 +9,4 @@ public interface InvertedIterator {
 
 	// It is placed in the last element
 	public void goLast();
-} 
+}
