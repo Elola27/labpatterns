@@ -7,7 +7,7 @@ import domain.SymptomSortzailea;
 
 public class Main2 {
 
-	public static void main2(String[] args) {
+	public static void main(String[] args) {
 		Observable pacient1=new Covid19Pacient("aitor", 35, new SymptomSortzailea());
 		PacientObserverGUI pacientGUI= new PacientObserverGUI (pacient1);
 		PacientSymptomGUI frame = new PacientSymptomGUI ((Covid19Pacient)pacient1);
